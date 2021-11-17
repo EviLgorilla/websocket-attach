@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface Notification {
-    date: string,
+    date: number,
     title: string,
     message: string
 }
