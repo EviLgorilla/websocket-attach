@@ -7,9 +7,9 @@ function App() {
     useNotification();
 
     return (
-    <div>
-        <TestComponent />
-    </div>
+        <div>
+            <TestComponent />
+        </div>
   );
 }
 
