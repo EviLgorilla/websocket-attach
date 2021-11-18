@@ -6,11 +6,9 @@ import {DispatchProp} from 'react-redux';
 
 const WSS_PATH = 'wss://demo.piesocket.com/v3/channel_1?api_key=oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm&notify_self';
 
-const isWS = true;
-
 interface IWebSocketConnection {
     wssUrl: string,
-    action: (data: Partial<WebSocketHook>, isWs: boolean) =>  DispatchProp<any>
+    action: (data: Partial<WebSocketHook>) =>  DispatchProp<any>
 }
 
 const useWebSocketConnection = ({wssUrl = WSS_PATH, action }: IWebSocketConnection) => {
@@ -37,7 +35,7 @@ const useWebSocketConnection = ({wssUrl = WSS_PATH, action }: IWebSocketConnecti
             dispatch(action({
                 lastJsonMessage,
                 readyState
-            }, isWS))
+            }))
             return;
         }
         return;
